@@ -48,6 +48,7 @@ function Home() {
           onSubmit={async (e) => {
             e.preventDefault();
             await createTodo({ name: todo });
+            setTodo("");
             mutate(url);
           }}
         >
