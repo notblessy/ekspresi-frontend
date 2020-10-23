@@ -15,7 +15,7 @@ function Home() {
   const [todo, setTodo] = useState("");
 
   return (
-    <Box w="550px" m="0 auto">
+    <Box maxW="550px" m="0 auto">
       <Box bg="gray.100" p="2" borderRadius="0 0 4px 4px">
         <Stack isInline justify="space-between">
           <Box>
