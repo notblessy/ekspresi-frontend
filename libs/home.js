@@ -1,11 +1,12 @@
 import fetch from "isomorphic-unfetch";
+import config from "../config";
 
 const headers = {
   "Content-Type": "application/json; charset=utf-8",
 };
 
 export const createTodo = (data) => {
-  return fetch("http://localhost:8000/todolist", {
+  return fetch(config.BASE_URL + "/todolist", {
     method: "POST",
     headers,
     body: JSON.stringify(data),
@@ -13,7 +14,7 @@ export const createTodo = (data) => {
 };
 
 export const setAsComplete = (id, data) => {
-  return fetch("http://localhost:8000/todolist/" + id, {
+  return fetch(config.BASE_URL + "/todolist/" + id, {
     method: "PUT",
     headers,
     body: JSON.stringify(data),
@@ -21,7 +22,7 @@ export const setAsComplete = (id, data) => {
 };
 
 export const destroy = (id) => {
-  return fetch("http://localhost:8000/todolist/", {
+  return fetch(config.BASE_URL + "/todolist/", {
     method: "DELETE",
     headers,
     body: JSON.stringify({

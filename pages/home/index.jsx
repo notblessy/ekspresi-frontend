@@ -4,11 +4,12 @@ import { useRouter } from "next/router";
 import { Button, Box, Text, Stack, Input, Checkbox } from "@chakra-ui/core";
 import { MdAdd, MdDelete, MdMenu, MdSearch } from "react-icons/md";
 import { createTodo, destroy, setAsComplete } from "../../libs/home";
+import config from "../../config";
 
 function Home() {
   const router = useRouter();
   const url = () =>
-    "http://localhost:8000/todolist?completion=" + router.query.completion;
+    config.BASE_URL + "/todolist?completion=" + router.query.completion;
 
   const { data: todos } = useSWR(url);
   const [todo, setTodo] = useState("");
