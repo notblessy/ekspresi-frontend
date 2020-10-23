@@ -60,6 +60,7 @@ function Home() {
               variant="outline"
               bg="gray.200"
               color="gray.600"
+              value={todo}
               onChange={(e) => setTodo(e.target.value)}
             ></Input>
             <Button type="submit">
